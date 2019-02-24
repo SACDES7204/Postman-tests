@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "c84b935f-671b-4f2d-80e5-eed91e241b77",
+		"name": "GET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello123",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f94a4189-5cab-44b4-a069-d5d1bc976c91",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "cushy_api_key",
+						"value": "3bcd1fb0eaeabe09e96ae043e3f209a7",
+						"type": "text"
+					},
+					{
+						"key": "auth_secret",
+						"value": "7d506969c13d47bf56847b1b10ecf450",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "hklhlkh",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb3ff207-0e45-4879-a3f5-c46de2ff9524",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/2",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e24278a-7b05-4f8d-b131-3b23b1d063dd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Api contains 200 json data\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length).to.eql(200);",
+							"});",
+							"pm.test(\"20 records are present\",function(){",
+							"    var json_data=pm.response.json();",
+							"    pm.expect(json_data.records.length).to.eql(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d5e2fe35-c714-4c0b-95cd-68515a17e95f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "df0fdf11-d80e-412f-9ede-eb389c197f9e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c9084cd-3918-4396-833e-8dfbebad3b5a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"20 records are present\",function(){",
+							"    var json_data=pm.response.json();",
+							"    pm.expect(json_data.records.length).to.eql(20);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "cushy_api_key",
+						"value": "3bcd1fb0eaeabe09e96ae043e3f209a7",
+						"type": "text"
+					},
+					{
+						"key": "auth_secret",
+						"value": "7d506969c13d47bf56847b1b10ecf450",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.124/v1.1/data/nearby_cushy?latitude=12.982990&longitude=77.585098",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"124"
+					],
+					"path": [
+						"v1.1",
+						"data",
+						"nearby_cushy"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "12.982990"
+						},
+						{
+							"key": "longitude",
+							"value": "77.585098"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5aec2c8-c753-49f3-9e5c-8c6a93870c01",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
